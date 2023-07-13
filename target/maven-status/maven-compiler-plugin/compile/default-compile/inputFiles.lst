@@ -1,0 +1,11 @@
+/Users/shawn.nance/Code/Console/JavaProtobufKafka/src/main/java/poc/protobuf/protos/AddressBookProtos.java
+/Users/shawn.nance/Code/Console/JavaProtobufKafka/src/main/java/poc/protobuf/ReadPerson.java
+/Users/shawn.nance/Code/Console/JavaProtobufKafka/src/main/java/poc/protobuf/protos/PersonOrBuilder.java
+/Users/shawn.nance/Code/Console/JavaProtobufKafka/src/main/java/poc/kafka/ProtobufDynamicConsumer.java
+/Users/shawn.nance/Code/Console/JavaProtobufKafka/src/main/java/poc/kafka/ProtobufProducer.java
+/Users/shawn.nance/Code/Console/JavaProtobufKafka/src/main/java/poc/protobuf/protos/AddressBook.java
+/Users/shawn.nance/Code/Console/JavaProtobufKafka/src/main/java/poc/protobuf/protos/AddressBookOrBuilder.java
+/Users/shawn.nance/Code/Console/JavaProtobufKafka/src/main/java/poc/protobuf/AddPerson.java
+/Users/shawn.nance/Code/Console/JavaProtobufKafka/src/main/java/poc/protobuf/Main.java
+/Users/shawn.nance/Code/Console/JavaProtobufKafka/src/main/java/poc/protobuf/protos/Person.java
+/Users/shawn.nance/Code/Console/JavaProtobufKafka/src/main/java/poc/kafka/ProtobufConsumer.java
