@@ -14,23 +14,25 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 
+import poc.protobuf.Config;
+
 public class ProtobufDynamicConsumer {
 
-    public void readFromTopic() {
+    public void readFromTopic(Config envProps) {
 
         //Set properties for the consumer
         Properties consumerProps = new Properties();
 
-        consumerProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "18.117.118.109:9092");
+        consumerProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, envProps.get(Config.PropKeys.KAFKA_IP));
         consumerProps.put(ConsumerConfig.GROUP_ID_CONFIG, "poc-dynamic-consumer-group");
-        consumerProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
-        consumerProps.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
+        consumerProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, envProps.get(Config.PropKeys.AUTO_OFFSET_REST_CONFIG));
+        consumerProps.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, envProps.get(Config.PropKeys.ENABLE_AUTO_COMMIT_CONFIG));
         consumerProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         consumerProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, KafkaProtobufDeserializer.class);
-        consumerProps.put(KafkaProtobufDeserializerConfig.SCHEMA_REGISTRY_URL_CONFIG,"http://18.117.118.109:8081");
+        consumerProps.put(KafkaProtobufDeserializerConfig.SCHEMA_REGISTRY_URL_CONFIG,envProps.get(Config.PropKeys.KAFKA_SCHEMA_REGISTRY));
 
         KafkaConsumer<String, DynamicMessage> consumer = new KafkaConsumer<>(consumerProps);
-        consumer.subscribe(Collections.singleton("proto"));
+        consumer.subscribe(Collections.singleton(envProps.get(Config.PropKeys.KAKFA_TOPIC)));
 
 
         while(true) {
