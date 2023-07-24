@@ -11,7 +11,9 @@ public class Config {
         KAFKA_SCHEMA_REGISTRY,
         KAKFA_TOPIC,
         AUTO_OFFSET_REST_CONFIG,
-        ENABLE_AUTO_COMMIT_CONFIG
+        ENABLE_AUTO_COMMIT_CONFIG,
+
+        TOPIC_RECORD_NAME_STRATEGY_CONFIG
     }
 
     public Config() {

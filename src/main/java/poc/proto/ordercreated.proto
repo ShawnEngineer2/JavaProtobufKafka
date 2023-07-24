@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package poc.protobuf;
+
+option java_multiple_files = true;
+option java_package = "poc.protobuf.protos";
+option java_outer_classname = "OrderCreatedProtos";
+
+message OrderCreated {
+  enum OrderType {
+    DIRECT = 0;
+    PICKUP = 1;
+    DELIVERY = 2;
+  }
+
+  optional int32 orderId = 1;
+  optional OrderType orderType = 2;
+  optional int32 customerId = 3;
+  optional int32 productId = 4;
+  optional int32 quantity = 5;
+
+}

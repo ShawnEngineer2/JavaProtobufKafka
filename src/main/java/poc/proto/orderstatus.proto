@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package poc.protobuf;
+
+option java_multiple_files = true;
+option java_package = "poc.protobuf.protos";
+option java_outer_classname = "OrderStatusUpdateProtos";
+
+message OrderStatusUpdate {
+  enum OrderStatus {
+    ORDER_RECEIVED = 0;
+    PROCESSING = 1;
+    SHIPPED = 2;
+    DELIVERED = 3;
+    READY_FOR_PICKUP = 4;
+    CUST_PICKUP_COMPLETE = 5;
+  }
+
+  optional int32 orderId = 1;
+  optional OrderStatus orderStatus = 2;
+
+}
